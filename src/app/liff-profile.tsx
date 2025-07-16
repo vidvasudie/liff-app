@@ -17,7 +17,8 @@ export default function LiffProfile() {
 			const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
 			if (!liffId) return;
 
-			await liff.init({ liffId: "2007757051-xz3JPB8N" });
+			//await liff.init({ liffId: "2007757051-xz3JPB8N" });
+			await liff.init({ liffId });
 
 			if (!liff.isLoggedIn()) {
 				liff.login();
@@ -38,7 +39,9 @@ export default function LiffProfile() {
 	if (!profile) return <div>Loading profile...</div>;
 	return (
 		<div>
-			<img src={profile.pictureUrl} alt={profile.displayName} width={100} />
+			{profile.pictureUrl && (
+				<img src={profile.pictureUrl} alt={profile.displayName} width={100} />
+			)}
 			<div>{profile.displayName}</div>
 		</div>
 	);
