@@ -17,7 +17,7 @@ export default function LiffProfile() {
 			const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
 			if (!liffId) return;
 
-			await liff.init({ liffId });
+			await liff.init({ liffId: "2007757051-xz3JPB8N" });
 
 			if (!liff.isLoggedIn()) {
 				liff.login();
