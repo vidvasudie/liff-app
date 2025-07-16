@@ -57,7 +57,7 @@ export default function LiffProfile() {
 				minHeight: "50vh",
 			}}
 		>
-			<div>
+			<div style={{ marginBottom: ".8rem" }}>
 				<button
 					onClick={handleGetProfile}
 					style={{ padding: "10px 24px", fontSize: "16px" }}
@@ -67,9 +67,10 @@ export default function LiffProfile() {
 				{/* <button onClick={() => liff.logout()}>Logout</button> */}
 			</div>
 			{profile?.pictureUrl && (
-				<img src={profile.pictureUrl} alt={profile.displayName} width={100} />
+				<img src={profile.pictureUrl} alt={profile.displayName} width={300} />
 			)}
 			<div>{profile?.displayName}</div>
+			<div>[{profile?.userId}]</div>
 		</div>
 	);
 }
