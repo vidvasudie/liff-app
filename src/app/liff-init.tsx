@@ -6,12 +6,12 @@ export default function LiffInit() {
 	useEffect(() => {
 		const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
 		console.log("Initializing LIFF with ID:", liffId);
-		if (!liffId) {
-			console.error("LIFF ID is not defined.");
-			return;
-		}
+		// if (!liffId) {
+		// 	console.error("LIFF ID is not defined.");
+		// 	return;
+		// }
 		liff
-			.init({ liffId })
+			.init({ liffId: "2007757051-xz3JPB8N" })
 			.then(() => {
 				// LIFF initialized
 			})
@@ -19,10 +19,11 @@ export default function LiffInit() {
 				console.error("LIFF init error:", err);
 			});
 
+		console.log("LIFF isLoggedIn:", liff.isLoggedIn());
 		if (!liff.isLoggedIn()) {
-			liff.login();
+			//liff.login();
 		}
 	}, []);
 
-	return null;
+	return <></>;
 }
