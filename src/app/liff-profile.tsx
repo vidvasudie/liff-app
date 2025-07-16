@@ -26,6 +26,7 @@ export default function LiffProfile() {
 
 			try {
 				const profile = await liff.getProfile();
+				console.log("LIFF profile:", profile);
 				setProfile(profile);
 			} catch (err) {
 				console.error("LIFF getProfile error:", err);
